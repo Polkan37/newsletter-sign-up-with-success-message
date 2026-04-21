@@ -5,7 +5,7 @@ import SuccessMessage from './components/SuccessMessage'
 
 function App() {
   const [submittedEmail, setSubmittedEmail] = useState('')
-
+  const listIcon = 'icon-list.svg';
   const handleSubscribe = (email) => {
     setSubmittedEmail(email)
   }
@@ -15,7 +15,7 @@ function App() {
   }
 
   return (
-    <div className="popup">
+    <div className="popup" style={{ '--list-icon': `url(${listIcon})` }}>
       {!submittedEmail ? (
         <div className="newsletter">
           <picture>

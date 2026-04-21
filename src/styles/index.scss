@@ -29,8 +29,6 @@ $mobile: 375px;
 $tablet: 768px;
 $desktop: 1024px;
 
-$list-icon: 'icon-list.svg';
-
 // Typography
 
 @mixin text-preset-1 {
@@ -162,7 +160,7 @@ body {
                 & li {
                     min-height: 21px;
                     padding-right: 16px;
-                    background: url($list-icon);
+                    background: var(--list-icon);
                     background-repeat: no-repeat;
                     background-position: 0 0;
                     padding-left: 37px;

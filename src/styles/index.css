@@ -99,7 +99,7 @@ body {
 .popup .newsletter__text ul li {
   min-height: 21px;
   padding-right: 16px;
-  background: url("icon-list.svg");
+  background: var(--list-icon);
   background-repeat: no-repeat;
   background-position: 0 0;
   padding-left: 37px;
