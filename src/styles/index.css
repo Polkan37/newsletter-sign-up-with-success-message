@@ -90,7 +90,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0px;
   color: #36384D;
-  min-width: 400;
+  font-weight: 400;
 }
 .popup .newsletter__text ul {
   padding: 24px 0 40px;
@@ -99,7 +99,7 @@ body {
 .popup .newsletter__text ul li {
   min-height: 21px;
   padding-right: 16px;
-  background: url("./icon-list.svg");
+  background: url("icon-list.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   padding-left: 37px;

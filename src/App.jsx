@@ -5,7 +5,7 @@ import SuccessMessage from './components/SuccessMessage'
 
 function App() {
   const [submittedEmail, setSubmittedEmail] = useState('')
-  const listIcon = 'icon-list.svg'
+
   const handleSubscribe = (email) => {
     setSubmittedEmail(email)
   }
@@ -28,9 +28,9 @@ function App() {
             <h1 className="newsletter__title">Stay updated!</h1>
             <p className="newsletter__text">Join 60,000+ product managers receiving monthly updates on:
               <ul>
-                <li data-icon={listIcon}>Product discovery and building what matters</li>
-                <li data-icon={listIcon}>Measuring to ensure updates are a success</li>
-                <li data-icon={listIcon}>And much more!</li>
+                <li>Product discovery and building what matters</li>
+                <li>Measuring to ensure updates are a success</li>
+                <li>And much more!</li>
               </ul>
             </p>
 
