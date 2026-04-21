@@ -153,7 +153,7 @@ body {
         &__text {
             @include text-preset-2;
             color: $primary-light;
-            min-width: 400;
+            font-weight: 400;
 
             & ul {
                 padding: $spacing-300 0 $spacing-500;
@@ -162,7 +162,7 @@ body {
                 & li {
                     min-height: 21px;
                     padding-right: 16px;
-                    background: url($list-icon);
+                    background: url(attr(data-icon));
                     background-repeat: no-repeat;
                     background-position: 0 0;
                     padding-left: 37px;
