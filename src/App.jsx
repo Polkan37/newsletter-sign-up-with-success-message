@@ -5,7 +5,7 @@ import SuccessMessage from './components/SuccessMessage'
 
 function App() {
   const [submittedEmail, setSubmittedEmail] = useState('')
-  const listIcon = 'icon-list.svg';
+  const listIcon = '/icon-list.svg';
   const handleSubscribe = (email) => {
     setSubmittedEmail(email)
   }
