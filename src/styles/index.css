@@ -99,7 +99,7 @@ body {
 .popup .newsletter__text ul li {
   min-height: 21px;
   padding-right: 16px;
-  background: url("icon-list.svg");
+  background: url("./icon-list.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   padding-left: 37px;
@@ -162,7 +162,7 @@ form.subscription label {
 }
 form.subscription label::after {
   display: none;
-  content: "Valid email required";
+  content: attr(data-error);
   position: absolute;
   top: 0;
   right: 0;

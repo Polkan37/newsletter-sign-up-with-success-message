@@ -18,7 +18,7 @@ export default function SubscriptionForm({ onSubscribe }) {
 
   return (
     <form onSubmit={handleSubmit} className="subscription" noValidate>
-      <label className={touched && !isValid ? 'invalid' : ''} htmlFor="email">Email address</label>
+      <label className={touched && !isValid ? 'invalid' : ''} htmlFor="email"  data-error="Valid email required">Email address</label>
       <input
         id="email"
         type="email"
