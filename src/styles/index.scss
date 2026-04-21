@@ -1,0 +1,344 @@
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'), url('./fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto Medium'), url('./fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+// fonts
+$font-basic: 'Roboto', sans-serif;
+
+// colors
+$white: #FFFFFF;
+$background: #949494;
+$primary: #242742;
+$primary-light: #36384D;
+$secondary: #FF6155;
+$secondary-gradient: linear-gradient(90deg, #FF6A3A 0%, #FF527B 100%);
+
+$mobile: 375px;
+$tablet: 768px;
+$desktop: 1024px;
+
+// Typography
+
+@mixin text-preset-1 {
+    font-family: $font-basic;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: 0px;
+}
+
+@mixin text-preset-1-mobile {
+    font-family: $font-basic;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: 0px;
+}
+
+@mixin text-preset-2 {
+    font-family: $font-basic;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0px;
+}
+
+@mixin text-preset-3 {
+    font-family: $font-basic;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0px;
+}
+
+//  spacing
+
+$spacing-100: 8px;
+$spacing-200: 16px;
+$spacing-300: 24px;
+$spacing-400: 32px;
+$spacing-500: 40px;
+$spacing-600: 48px;
+$spacing-800: 64px;
+$spacing-900: 72px;
+$spacing-1300: 104px;
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*:not(dialog) {
+    margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+html,
+body {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: $primary-light;
+    font-family: $font-basic;
+    padding: 0;
+    margin: 0;
+}
+
+.popup {
+    max-width: 608px;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0 auto;
+    border-radius: 0;
+
+
+    .newsletter {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        background: $white;
+
+        &__image {
+            width: 100%;
+        }
+
+        &__content {
+            padding: $spacing-500 $spacing-300;
+        }
+
+        &__title {
+            @include text-preset-1-mobile;
+            color: $primary;
+            margin-bottom: $spacing-300;
+        }
+
+        &__text {
+            @include text-preset-2;
+            color: $primary-light;
+            min-width: 400;
+
+            & ul {
+                padding: $spacing-300 0 $spacing-500;
+                list-style: none;
+
+                & li {
+                    min-height: 21px;
+                    padding-right: 16px;
+                    background: url('icon-list.svg');
+                    background-repeat: no-repeat;
+                    background-position: 0 0;
+                    padding-left: 37px;
+                    padding-bottom: 8px;
+                    background-size: 21px 22px;
+                }
+            }
+        }
+    }
+
+    .success-message {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 100vh;
+        height: 100%;
+        padding: 0 24px 70px;
+        margin: 0;
+        background: $white;
+
+    }
+
+    .success {
+        &__content {
+            min-height: 628px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: space-between;
+        }
+
+        &__title {
+            @include text-preset-1-mobile;
+            padding: 32px 0px;
+        }
+
+        &__text {
+            @include text-preset-2;
+            color: $primary;
+            font-weight: 400;
+
+            & a {
+                color: $primary;
+                text-decoration: none;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+form.subscription {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        position: relative;
+        @include text-preset-3;
+        color: $primary;
+        padding-bottom: $spacing-100;
+
+        &::after {
+            display: none;
+            content: 'Valid email required';
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: $secondary;
+            @include text-preset-3;
+        }
+
+        &.invalid {
+            &::after {
+                display: block;
+            }
+        }
+    }
+
+    input {
+        padding: $spacing-200 $spacing-300;
+        margin-bottom: $spacing-300;
+        border: 1px solid $background;
+        border-radius: $spacing-100;
+        color: $background;
+        @include text-preset-2;
+
+
+        &:focus,
+        &:valid {
+            outline: none;
+            border-color: $primary;
+            color: $primary;
+        }
+
+        &.invalid {
+            border-color: $secondary;
+            color: $secondary;
+            background: #FFE7E6;
+
+        }
+    }
+}
+
+button {
+    padding: $spacing-200;
+    background: $primary;
+    border: none;
+    border-radius: $spacing-100;
+    color: $white;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+        background: $secondary-gradient;
+        color: $white;
+        box-shadow: 0 16px 32px 0 rgba(255, 97, 85, 0.5);
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popup {
+        min-height: unset;
+        height: 100%;
+
+        .newsletter {
+            min-height: unset;
+            height: 100%;
+            border-radius: 36px;
+            padding: 40px;
+
+            &__content {
+                padding: 40px 0 0;
+            }
+
+            &__title {
+                @include text-preset-1;
+            }
+
+            &__text ul {
+                padding-bottom: 24px;
+            }
+        }
+
+        .success-message {
+            min-height: unset;
+            max-width: 504px;
+            height: 100%;
+            border-radius: 36px;
+            padding: 64px;
+
+            .success__content {
+                min-height: unset;
+                gap: 32px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .popup {
+        max-width: 904px;
+
+        .newsletter {
+            flex-direction: row-reverse;
+            gap: 64px;
+            padding: 32px;
+
+
+            &__image {
+                max-width: 400px;
+                height: 100%;
+            }
+        }
+    }
+}
